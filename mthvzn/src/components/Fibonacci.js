@@ -28,7 +28,7 @@ class Fibonacci extends React.Component {
           <Typography variant='h5'>
             Fibonacci Sequence Visualization
           </Typography>
-          <p>The Golden Spiral, derived from the Fibonacci sequence, is a unique ratio that describes many concepts found in nature. The further away the spiral gets from the origin, the wider the spiral becomes. The Golden Spiral has a variety of real world applications: from design and fashion to predicting trends in the financial market. For more explanation on the spiral and its equation, please visit the link at the bottom of this page.</p>
+          <p><center>The Golden Spiral, derived from the Fibonacci sequence, is a unique ratio that describes many concepts found in nature. The further away the spiral gets from the origin, the wider the spiral becomes. The Golden Spiral has a variety of real world applications: from design and fashion to predicting trends in the financial market. For more explanation on the spiral and its equation, please visit the link at the bottom of this page.</center></p>
 
           <FibonacciChart />
 
