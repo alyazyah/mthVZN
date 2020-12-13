@@ -28,7 +28,7 @@ class Pascal extends React.Component {
           <Typography variant='h5'>
             Pascal Triangle Visualization
           </Typography>
-          <p>(Explain app here)</p>
+          <p>In this section, Pascal’s triangle is visualized from rows 1-10. Using the slider, you can adjust to see the changes with the addition of each row.</p>
 
           <PascalChart />
 

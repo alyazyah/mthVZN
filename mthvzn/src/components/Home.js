@@ -26,7 +26,12 @@ class Home extends React.Component {
           <Typography variant='h5'>
             Welcome to mthVZN!
           </Typography>
-          <p>(Explain app here)</p>
+          <p><center>Hello! Welcome to our showcase project for MA293, mthVZN. We are showing visualizations for the Fibonacci sequence and Pascal’s triangle.</center></p>
+          <p><center>Each section has its own dedicated page in this web app.
+          We hope you enjoy playing around with each sequence!</center></p>
+          <p>
+Created by Damani Philip, Patricia Ganchozo, Gabriel Ramos, and Alyazyah Almarzooqi
+</p>
         </Grid>
       </Paper>
     );
