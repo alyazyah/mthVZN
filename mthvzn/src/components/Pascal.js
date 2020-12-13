@@ -35,6 +35,7 @@ class Pascal extends React.Component {
           <Typography variant='h6'>
             References
           </Typography>
+          <a href='https://dev.to/alisabaj/solving-pascal-s-triangle-in-javascript-4e59'>Pascal's Triangle in JS</a>
 
         </Grid>
       </Paper>
