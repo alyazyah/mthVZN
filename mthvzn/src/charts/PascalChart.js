@@ -9,6 +9,7 @@ import {
   VerticalGridLines,
   HorizontalGridLines,
   LabelSeries,
+  MarkSeries
 } from 'react-vis';
 import 'react-vis/dist/style.css';
 
@@ -44,8 +45,7 @@ export class PascalChart extends React.Component {
     await this.calcPascals(this.state.slider_val);
 
     // push base case, the "tip" of Pascal's triangle
-    data_points.push({x: 0, y: 0, label: '1'});
-    // console.log(this.state.rows);
+    data_points.push({x: 0, y: 0, label: '1', size: 10});
 
     var start = -1;
     var x_pos;
@@ -54,17 +54,15 @@ export class PascalChart extends React.Component {
       for (var j = 0; j < this.state.rows[i].length; j++) {
         if (j == 0) {
           x_pos = start;
-          data_points.push({x: x_pos, y: i, label: `${this.state.rows[i][j]}`});
+          data_points.push({x: x_pos, y: i, label: `${this.state.rows[i][j]}`, size: 10});
         }
         else {
           x_pos += 2;
-          data_points.push({x: x_pos, y: i, label: `${this.state.rows[i][j]}`});
+          data_points.push({x: x_pos, y: i, label: `${this.state.rows[i][j]}`, size: 10});
         }
       }
       start--;
     }
-
-    // console.log(data_points)
     this.setState({data: data_points});
   }
 
@@ -74,7 +72,6 @@ export class PascalChart extends React.Component {
   };
 
   async componentDidMount(){
-    // await this.calcPascals(this.state.slider_val);
     await this.createData();
   }
 
@@ -87,29 +84,34 @@ export class PascalChart extends React.Component {
       alignItems="center"
       >
         <XYPlot yDomain={[0, this.state.rows.length]} width={700} height={500}>
-          <VerticalGridLines />
+          {/*<VerticalGridLines />
           <HorizontalGridLines />
           <XAxis />
-          <YAxis />
-          <LabelSeries
-            animation="gentle"
+          <YAxis />*/}
+          <MarkSeries
             className='pascal-viz'
-            radius={20}
-            colorRange={['orange', 'cyan']}
+            animation="gentle"
+            strokeWidth={20}
+            color='#a37689'
+            data={this.state.data}
+          />
+          <LabelSeries
             data={this.state.data}
           />
       </XYPlot>
 
-      <Slider
-          value={this.state.slider_val}
-          aria-labelledby="discrete-slider"
-          valueLabelDisplay="auto"
-          step={1}
-          marks
-          min={1}
-          max={15}
-          onChange={this.handleSliderChange}
-      />
+      <div style={{ width: 600 }} >
+        <Slider
+            value={this.state.slider_val}
+            aria-labelledby="discrete-slider"
+            valueLabelDisplay="auto"
+            step={1}
+            marks
+            min={1}
+            max={10}
+            onChange={this.handleSliderChange}
+        />
+      </div>
     </Grid>
     );
   }

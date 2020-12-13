@@ -53,24 +53,26 @@ export class FibonacciChart extends React.Component {
           <YAxis />
           <MarkSeries
             className="fibonacci-viz"
-            animation="gentle"
+            animation="noWobble"
             strokeWidth={1}
+            color='#a37689'
             opacity="0.75"
             sizeRange={[5, 15]}
             data={this.state.data}
           />
       </XYPlot>
-
-      <Slider
-          value={this.state.slider_val}
-          aria-labelledby="discrete-slider"
-          valueLabelDisplay="auto"
-          step={1}
-          marks
-          min={1}
-          max={15}
-          onChange={this.handleSliderChange}
-      />
+      <div style={{ width: 600 }} >
+        <Slider
+            value={this.state.slider_val}
+            aria-labelledby="discrete-slider"
+            valueLabelDisplay="auto"
+            step={1}
+            marks
+            min={1}
+            max={15}
+            onChange={this.handleSliderChange}
+        />
+      </div>
     </Grid>
     );
   }

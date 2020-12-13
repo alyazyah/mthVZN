@@ -47,9 +47,11 @@ class NavBar extends React.Component {
               <Button className={classes.menuButton}>Pascal's Triangle</Button>
             </Link>
 
+            {/*
             <Link href='/mandelbrot' underline='none'>
               <Button className={classes.menuButton}>Mandelbrot Sets</Button>
             </Link>
+            */}
           </Grid>
         </AppBar>
       </Container>
