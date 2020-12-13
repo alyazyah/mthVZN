@@ -53,7 +53,7 @@ export class FibonacciChart extends React.Component {
           <YAxis />
           <MarkSeries
             className="fibonacci-viz"
-            animation="noWobble"
+            animation="gentle"
             strokeWidth={1}
             opacity="0.75"
             sizeRange={[5, 15]}
